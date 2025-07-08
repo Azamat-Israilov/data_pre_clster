@@ -1,0 +1,46 @@
+[METADATA]
+author_name = "Mark K."
+partner_name = "finca-congo"
+model_name = "congo_final_model"
+
+[PATHS]
+# train_data = "C:/Users/trill/scoring_rnd/global_finca/code/congo_united_2211.parquet"
+train_data = "data/prepared_data/congo_united_2211_prepared.parquet"
+blind_data = ""
+
+artifacts = "data/scoring_results"
+sfa_output = "data/sfa_results"
+artifacts_get_blind_model_input = "data/scoring_results/"
+get_blind_results_output = "data/prepared_data"
+blind_with_target_path = ""
+
+[TARGET_ENCODING]
+tme_enabled = false
+cumulative_days_col = "num_days_in_arrears_cur"
+days = 60
+col_name = ""
+
+[MACRO]
+enabled = false
+partner_country = "Kazakhstan"
+num_of_lags = 1
+window = 1
+date_col = "disb_date"
+
+[FEATURETOOLS]
+enabled = false
+create_date_features = false
+columns = []
+
+[VALIDATION]
+out_of_time = false
+oot_date_split = ""
+test_size = 0.2
+train_test_col = ""
+
+[FEATURE_CLASSES]
+max_classes = 100000000
+mapper = {}
+
+[COLNAMES]
+mapper = {}

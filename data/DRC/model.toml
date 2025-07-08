@@ -1,0 +1,36 @@
+[MLFLOW]
+tracking_uri = "http://172.201.114.238:5000/"
+port = "9024"
+
+[DEPLOY]
+enabled = true
+
+[HYPERPARAMETERS]
+training = {'iterations' = 300, 'depth' = 4, 'learning_rate'=0.03}
+tuning = {'learning_rate' = [0.01, 0.3], 'depth' = [1, 10], 'n_estimators' = [50, 1000], l2_leaf_reg=[1, 20]}
+sfa = {'iterations' = 500, 'learning_rate' = 0.2, 'depth' = 4}
+random_seed = 1
+
+[TUNING]
+enabled = false 
+
+[CALIBRATION]
+enabled = false
+
+[CV] 
+enabled = false
+folds = 5
+
+[FEATURES]
+feature_list = ['disb_amt_usd','installment_num', 'eir', 'age', 'collateral_balance',
+'product_id', 'marital_status', 'gender', 'branch_name', 'branch_city', 'cust_sector',
+'usd_exchange', 'consumer_price_index_cpi', 'food_inflation', 'inflation_rate', 'interest_rate'
+]
+
+cat_feature_list = ['product_id', 'marital_status', 'gender', 'branch_name', 'branch_city', 'cust_sector',
+]
+
+[THRESHOLD_REPORT]
+min_thres = 1
+max_thres = 30
+stp_thres = 1
